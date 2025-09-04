@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Odzyskiwanie hasła</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="m1">
+        <h1 class="tytul">Serwis<span class="red">ATM</span></h1>
+    </header>
+    <main class="ramka">
+        <form action="logowanie.php" method="post">
+        <h2 class="log">Odzyskiwanie hasła</h2>
+            <input type="text" name="username" placeholder="Login*" required>
+            <br>
+            <input type="email" name="email" placeholder="Email powiązany z kontem*" required>
+            <br>
+            <input type="submit" value="Wygeneruj Hasło" class="btn">
+
+            <a href="index.html">Powrót do strony logowania</a>
+        </form>
+    </main>
+</body>
+</html>

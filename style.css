@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: white;
+  font-family: 'Roboto', 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+header,
+.log {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+  margin: auto;
+  margin-bottom: 7vh;
+  margin-top: 7vh;
+  padding: 5%;
+  border: 1px solid gray;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+label {
+  font-size: 1rem;
+  padding: 0.1em;
+}
+
+input {
+  padding: 2vh 5vw;
+  font-size: 1rem;
+}
+
+button, .btn {
+  background-color: rgb(255, 37, 37);
+  color: white;
+  cursor: pointer;
+  padding: 2vh auto;
+  width: 100%;
+  margin: 5vh auto;
+  display: flex;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+button:hover, .btn:hover {
+  background-color: rgb(225, 17, 17);
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.red {
+  color: red;
+}
+.centra {
+  display: flex;
+  justify-content: center;
+  margin-top: 5vh;
+}
+.obraz{
+  margin-left: 5vw;
+}
+.m0{
+  margin: 0;
+}
+.centra1{
+  margin-left: 5vw;
+}
+.m1{
+  margin-top: 2.5vw;
+}
+.tytul{
+  font-size: 5rem ;
+}
+.log{
+  margin-bottom: 7.5vh;
+}
+.toggleBtn{
+  cursor: pointer;
+}
+@media (max-width: 600px) {
+  body {
+    font-size: 15px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  label {
+    font-size: 0.95rem;
+  }
+
+  input {
+    padding: 1vh 4vw;
+    font-size: 1rem;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 1.5vh 15vw;
+  }
+  .btn{
+    font-size: 1rem;
+    padding: 1.5vh 15vw;
+  }
+  .obraz{
+    margin-left: 15vw;
+  }
+  .log{
+    margin-top: 20vh;
+  }
+  .centra1{
+  margin-left: 15vw;
+}
+}
