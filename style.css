@@ -85,9 +85,6 @@ a {
 .centra1{
   margin-left: 5vw;
 }
-.m1{
-  margin-top: 2.5vw;
-}
 .tytul{
   font-size: 5rem ;
 }
@@ -96,6 +93,12 @@ a {
 }
 .toggleBtn{
   cursor: pointer;
+}
+.ikona{
+    font-size: 3rem;
+    position: absolute;
+    right: 0;
+    padding: 1vw;
 }
 @media (max-width: 600px) {
   body {
