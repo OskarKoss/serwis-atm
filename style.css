@@ -138,5 +138,11 @@ a {
   }
   .centra1{
   margin-left: 15vw;
-}
+  }
+  .ikona{
+    font-size: 1rem;
+    position: absolute;
+    right: 0;
+    padding: 1vw;
+  }
 }
