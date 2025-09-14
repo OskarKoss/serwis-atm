@@ -1,11 +1,10 @@
 <?php
 session_start();
 
-// Połączenie z bazą
 $host = "localhost";
-$dbname = "srv85578_serwisatm";
-$user = "root";
-$pass = "";
+$dbname = "srv85578_serwis_atm";
+$user = "srv85578_serwis_atm";
+$pass = "drz2YMcjYbSQEnzfra4n";
 
 $conn = new mysqli($host, $user, $pass, $dbname);
 if ($conn->connect_error) {

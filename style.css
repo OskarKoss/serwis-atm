@@ -3,7 +3,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   background: white;
   font-family: 'Roboto', 'Segoe UI', sans-serif;
@@ -16,7 +15,9 @@ header,
   justify-content: center;
   align-items: center;
 }
-
+.tytul{
+  font-size: 5rem ;
+}
 form {
   display: flex;
   flex-direction: column;
@@ -28,46 +29,37 @@ form {
   padding: 5%;
   border: 1px solid gray;
 }
-
 h1 {
   font-size: 2.5rem;
 }
-
 h2 {
   font-size: 1.5rem;
 }
-
 label {
   font-size: 1rem;
   padding: 0.1em;
 }
-
 input {
   padding: 2vh 5vw;
   font-size: 1rem;
 }
-
 button, .btn {
   background-color: rgb(255, 37, 37);
   color: white;
   cursor: pointer;
-  padding: 2vh auto;
   width: 100%;
-  margin: 5vh auto;
+  margin: 4.5vh auto;
   display: flex;
   justify-content: center;
   font-size: 1rem;
 }
-
 button:hover, .btn:hover {
   background-color: rgb(225, 17, 17);
 }
-
 a {
   text-decoration: none;
   color: black;
 }
-
 .red {
   color: red;
 }
@@ -85,9 +77,6 @@ a {
 .centra1{
   margin-left: 5vw;
 }
-.tytul{
-  font-size: 5rem ;
-}
 .log{
   margin-bottom: 7.5vh;
 }
@@ -100,31 +89,32 @@ a {
     right: 0;
     padding: 1vw;
 }
-@media (max-width: 600px) {
+.formula{
+    width: 100%;
+}
+@media screen and (max-width: 600px) {
   body {
     font-size: 15px;
   }
-
   h1 {
     font-size: 2rem;
   }
-
   h2 {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
   }
-
   label {
     font-size: 0.95rem;
   }
-
   input {
     padding: 1vh 4vw;
     font-size: 1rem;
   }
-
   button {
     font-size: 1rem;
     padding: 1.5vh 15vw;
+  }
+  .formula{
+    width: 100%;
   }
   .btn{
     font-size: 1rem;
@@ -134,15 +124,31 @@ a {
     margin-left: 15vw;
   }
   .log{
-    margin-top: 20vh;
+    margin: 5vh, auto;
   }
   .centra1{
-  margin-left: 15vw;
+  margin-left: 22vw;
   }
   .ikona{
     font-size: 1rem;
     position: absolute;
     right: 0;
     padding: 1vw;
+  }
+  form{
+    width: 80vw;
+  }
+  .log{
+    margin: 5vh auto;
+  }
+  .tytul{
+    font-size: 3rem;
+  }
+  .ikona{
+    font-size: 2rem;
+    position: absolute;
+    right: 0;
+    padding: 4vw;
+    padding-top: 2.35vh;
   }
 }

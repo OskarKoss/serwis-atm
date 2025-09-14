@@ -25,7 +25,7 @@
             <input type="password" name="password" placeholder="Hasło*" required>
             <br>
             <input type="submit" value="Zaloguj" class="btn">
-        <a href="forgor.html">Nie pamiętam hasła</a>
+        <a href="forgor.html" id="link">Nie pamiętam hasła</a>
         </form>
     </main>
 
@@ -42,6 +42,7 @@
             document.getElementById('ikona').style.color = 'white';
             document.getElementById('body').style.backgroundColor = '#1E1E1E';
             document.getElementById('body').style.color = 'white';
+            document.getElementById('link').style.color = 'white';
         } 
         else if (icon.classList.contains("fa-moon")) {
             icon.classList.remove("fa-moon", "fa-regular");
@@ -51,6 +52,7 @@
             document.getElementById('ikona').style.color = 'black';
             document.getElementById('body').style.backgroundColor = 'white';
             document.getElementById('body').style.color = 'black';
+            document.getElementById('link').style.color = 'black';
         }
     });
 </script>
