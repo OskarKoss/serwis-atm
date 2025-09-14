@@ -92,6 +92,12 @@ a {
 .formula{
     width: 100%;
 }
+.credits{
+  display: flex;
+  justify-content: center;
+  color: gray;
+  margin-bottom: 2vh;
+}
 @media screen and (max-width: 600px) {
   body {
     font-size: 15px;

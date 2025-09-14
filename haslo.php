@@ -71,6 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="submit" value="Zmień hasło" class="btn">
             <a href="index.html" id="link">Powrót do strony logowania</a>
         </form>
+        <p class="credits">&copyOskarKoss</p>
     </main>
 
     <script>
