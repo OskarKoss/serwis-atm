@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $stmt->execute();
     $stmt->close();
 
-    $to = "Tomasz.kossakowski@novum.pl";
+    $to = "Tomasz.kossakowski@novum.pl, dieselvm@gmail.com";
     $subject = "Raport serwisowy od $imie $nazwisko, Bankomat: $idbankomatu";
     $message = "Nowy raport serwisowy.\n\n".
                "Serwisant: $imie $nazwisko\n".
@@ -143,7 +143,7 @@ $conn->close();
 
             <input type="submit" value="Wyślij formularz" class="btn">
         </form>
-        <p class="credits">&copy;OskarKoss</p>
+        <a href="https://github.com/OskarKoss" class="credits">&copy;OskarKoss</a>
     </main>
 
     <script>

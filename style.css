@@ -88,6 +88,7 @@ a {
     position: absolute;
     right: 0;
     padding: 1vw;
+    cursor: pointer;
 }
 .formula{
     width: 100%;
