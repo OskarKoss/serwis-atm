@@ -9,8 +9,7 @@ body {
   font-size: 16px;
   line-height: 1.5;
 }
-header,
-.log {
+header, .log {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,7 +21,7 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 30%;
+  width: 40%;
   margin: auto;
   margin-bottom: 7vh;
   margin-top: 7vh;
@@ -75,7 +74,10 @@ a {
   margin: 0;
 }
 .centra1{
-  margin-left: 5vw;
+  padding: auto;
+  padding-right: 1vw;
+  display: flex;
+  justify-content: center;
 }
 .log{
   margin-bottom: 7.5vh;
@@ -99,6 +101,18 @@ a {
   color: gray;
   margin-bottom: 2vh;
 }
+.centra2, .centra3{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.ikonka{
+  margin: auto;
+}
+  .flex{
+    display: flex;
+    flex-direction: row;
+  }
 @media screen and (max-width: 600px) {
   body {
     font-size: 15px;
@@ -135,6 +149,11 @@ a {
   }
   .centra1{
   margin-left: 22vw;
+  }
+  .flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
   }
   .ikona{
     font-size: 1rem;
