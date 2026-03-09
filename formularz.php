@@ -6,9 +6,9 @@ if (!isset($_SESSION['id_konta'])) {
 }
 
 $host = "localhost";
-$dbname = "srv85578_serwis_atm";
-$user = "srv85578_serwis_atm";
-$pass = "drz2YMcjYbSQEnzfra4n";
+$dbname = "dbname";
+$user = "user";
+$pass = "pass";
 
 $conn = new mysqli($host, $user, $pass, $dbname);
 if ($conn->connect_error) {
@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $stmt->execute();
     $stmt->close();
 
-    $to = "okossakowski08@gmail.com";
+    $to = "email@email.com";
     $from = "noreply@serwisatm.pl";
 
     $subject = "=?UTF-8?B?" . base64_encode("Raport serwisowy: $imie $nazwisko, Bankomat $idbankomatu") . "?=";
