@@ -8,6 +8,7 @@ body {
   font-family: 'Roboto', 'Segoe UI', sans-serif;
   font-size: 16px;
   line-height: 1.5;
+  position: relative;
 }
 header, .log {
   display: flex;
@@ -88,8 +89,8 @@ a {
 .ikona{
     font-size: 3rem;
     position: absolute;
-    right: 0;
-    padding: 1vw;
+    right: 1vw;
+    top: 1vw;
     cursor: pointer;
 }
 .formula{

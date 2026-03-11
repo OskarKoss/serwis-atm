@@ -1,4 +1,7 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 session_start();
 if (!isset($_SESSION['id_konta'])) {
     header("Location: index.html");
@@ -6,9 +9,9 @@ if (!isset($_SESSION['id_konta'])) {
 }
 
 $host = "localhost";
-$dbname = "dbname";
-$user = "user";
-$pass = "pass";
+$dbname = "srv85578_serwis_atm";
+$user = "srv85578_serwis_atm";
+$pass = "drz2YMcjYbSQEnzfra4n";
 
 $conn = new mysqli($host, $user, $pass, $dbname);
 if ($conn->connect_error) {
@@ -28,7 +31,7 @@ $stmt->close();
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $data = $_POST['data'] ?? null;
-    $idbankomatu = $_POST['idbankomatu'] ?? null;
+    $idbankomatu = strtoupper($_POST['idbankomatu'] ?? null);
     $czas = $_POST['czas'] ?? null;
     $dojazd = $_POST['dojazd'] ?? null;
     $czesci = trim($_POST['czesci'] ?? '') ?: "Brak";
@@ -49,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $stmt->execute();
     $stmt->close();
 
-    $to = "email@email.com";
+    $to = "tomasz.kossakowski@novum.pl";
     $from = "noreply@serwisatm.pl";
 
     $subject = "=?UTF-8?B?" . base64_encode("Raport serwisowy: $imie $nazwisko, Bankomat $idbankomatu") . "?=";
@@ -98,9 +101,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $sent = mail($to, $subject, $message, $headers, "-f$from");
     }
 
-    echo $sent
-        ? "<p style='color:green;text-align:center;'>Raport zapisany i wysłany pomyślnie!</p>"
-        : "<p style='color:red;text-align:center;'>Błąd wysyłania maila</p>";
+echo $sent
+    ? "<p style='color:green;text-align:center;'>Raport zapisany i wysłany pomyślnie!</p> <br>
+       <a href='index.html' style='display:block; text-align:center; font-size:1.5rem;'>Wyloguj</a>"
+    : "<p style='color:red;text-align:center;'>Błąd wysyłania maila</p>";
 }
 
 $conn->close();
@@ -114,12 +118,18 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formularz zgłoszenia</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
     <script src="https://kit.fontawesome.com/490c528842.js" crossorigin="anonymous"></script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
 </head>
 <body id="body">
     <i class="fa-solid fa-sun ikona" id="ikona"></i>
@@ -155,63 +165,5 @@ $conn->close();
         </form>
         <a href="https://github.com/OskarKoss" class="credits" id="link">&copy;OskarKoss</a>
     </main>
-
-    <script>
-    const icon = document.getElementById("ikona");
-
-    icon.addEventListener("click", () => {
-        if (icon.classList.contains("fa-sun")) {
-            icon.classList.remove("fa-sun", "fa-solid");
-            icon.classList.add("fa-moon", "fa-regular");
-            document.getElementById("body").style.transition = "all 1s";
-            document.getElementById('ikona').style.color = 'white';
-            document.getElementById('body').style.backgroundColor = '#1E1E1E';
-            document.getElementById('body').style.color = 'white';
-            document.getElementById('link').style.color = 'white';
-            
-        } else if (icon.classList.contains("fa-moon")) {
-            icon.classList.remove("fa-moon", "fa-regular");
-            icon.classList.add("fa-sun", "fa-solid");
-            document.getElementById("body").style.transition = "all 1s";
-            document.getElementById('ikona').style.color = 'black';
-            document.getElementById('body').style.backgroundColor = 'white';
-            document.getElementById('body').style.color = 'black';
-            document.getElementById('link').style.color = 'black';
-        }
-    });
-
-    function updateForm() {
-        const naprawa = document.getElementById('naprawa').checked;
-        const przeglad = document.getElementById('przeglad').checked;
-        const form = document.getElementById('dynamicForm');
-
-        form.innerHTML = '';
-
-        if (naprawa || przeglad) {
-            if (naprawa) {
-                form.innerHTML += `
-                    <label>Czas:<br><input type="number" name="czas" placeholder="rbh" class="formula"/></label><br><br>
-                    <label>Dojazd:<br><input type="number" name="dojazd" placeholder="km" class="formula"/></label><br><br>
-                    <label>Części:<br><textarea name="czesci" rows="4" cols="40" placeholder="Użyte części" class="formula"></textarea></label><br><br>
-                    <label>Opis/Uwagi:<br><textarea name="nota" rows="4" cols="40" placeholder="Opis lub uwagi" class="formula"></textarea></label><br><br>
-                `;
-            } else if (przeglad) {
-                form.innerHTML += `
-                    <label>Dojazd:<br><input type="number" name="dojazd" placeholder="km" class="formula"/></label><br><br>
-                    <label>Opis/Uwagi:<br><textarea name="nota" rows="4" cols="40" placeholder="Opis lub uwagi" class="formula"></textarea></label><br><br>
-                `;
-            }
-        }
-    }
-
-    function validateFileUpload() {
-        const fileInput = document.getElementById("photo");
-        if (!fileInput.value) {
-            alert("Musisz dodać jeden załącznik (zdjęcie lub PDF)!");
-            return false;
-        }
-        return true;
-    }
-    </script>
 </body>
 </html>
